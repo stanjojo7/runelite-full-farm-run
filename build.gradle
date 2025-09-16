@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'com.example'
+version '1.0.0'
+
+sourceCompatibility = '17'
+targetCompatibility = '17'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://repo.runelite.net' }
+}
+
+dependencies {
+    compileOnly 'net.runelite:runelite-api:1.8.0'
+    compileOnly 'net.runelite:runelite-client:1.8.0'
+}
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'runelite-full-farm-run',
+                   'Implementation-Version': version
+    }
+}
